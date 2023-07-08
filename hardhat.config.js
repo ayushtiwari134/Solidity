@@ -5,6 +5,7 @@ module.exports = {
   zksolc: {
     version: "1.3.9",
     compilerSource: "binary",
+    defaultNetwork: "goerli",
     settings: {
       optimizer: {
         enabled: true,
@@ -12,6 +13,13 @@ module.exports = {
     },
   },
   networks: {
+    hardhat: {},
+    goerli: {
+      url: "https://rpc.ankr.com/eth_goerli",
+      accounts: [
+        "0x8140ff0edef8e47e619662f58864713f0866ea134b5c41cca890f8b3af187915",
+      ],
+    },
     zksync_testnet: {
       url: "https://zksync2-testnet.zksync.dev",
       ethNetwork: "goerli",
