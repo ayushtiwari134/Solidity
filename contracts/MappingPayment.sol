@@ -24,18 +24,21 @@ contract Practice {
     function getPerson(
         uint _id
     ) public view returns (string memory _name, address _receiver) {
-        Person storage p1 = id[_id];
-        return (p1.name, p1.receiver);
+        Person storage p1 = id[_id]; // stores the person with the id that is taken as input into variable p1.
+        return (p1.name, p1.receiver); // returns the name and address of the person.
     }
 
+    // Function to transfer ethereum into the contract and can be left as an empty function (for Remix ide)
     function payEthToContract() public payable {}
 
+    // Function to display the balance of the contract that has been transferred using the above function
     function getBalance() public view returns (uint balance) {
         return address(this).balance;
     }
 
-    function payEthToAddress() public {
-        Person storage p1 = id[0];
+    // Function to transfer the ethers which have been imported into the contract to an address that has been stored in the Person struct
+    function payEthToAddress(uint _id) public {
+        Person storage p1 = id[_id];
         p1.receiver.transfer(1 ether);
     }
 }
