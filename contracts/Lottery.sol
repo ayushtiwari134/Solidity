@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+// Contract
 contract Lottery {
     address public owner;
     uint playerCount = 0;
