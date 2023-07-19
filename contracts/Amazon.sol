@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 contract Amazon {
-    // initiates the owner's address
+    // initiates the owner's address.
     address public owner;
 
     constructor() {
