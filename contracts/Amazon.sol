@@ -70,6 +70,7 @@ contract Amazon {
 
     // function to send the balance to the owner
     function withdrawFunds() public onlyOwner {
+        // method to transfer funds
         (bool success, ) = owner.call{value: address(this).balance}("");
         require(success);
     }
