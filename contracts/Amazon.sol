@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 contract Amazon {
-    // initiates the owner's address
+    // initiates the owner's address.
     address public owner;
 
     constructor() {
@@ -70,6 +70,7 @@ contract Amazon {
 
     // function to send the balance to the owner
     function withdrawFunds() public onlyOwner {
+        // method to transfer funds
         (bool success, ) = owner.call{value: address(this).balance}("");
         require(success);
     }
